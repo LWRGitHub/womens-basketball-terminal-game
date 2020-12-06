@@ -8,7 +8,7 @@ from Player import Player
 class Team:
     # 3 class attribute
     player_types = ["Center", 'Power Forward', 'Small Forward', 'Point Guard', 'Shooting Guard']
-    player_count = 12
+    player_count = 5
     dis_form_hoop = 5
 
     # 4 INIT ATTRIBUTES 
@@ -20,25 +20,27 @@ class Team:
         # COMPOSITION is used here to create the women players in this basketball team 
         # by INSTANTIATING the player class for each player through a for loop
         for i in range(self.player_count):
-            if self.players == []:
-                new_player = Player(i, "Center", 0, random.uniform(5000000, 20000000))
+            # if self.players == []:
+                new_player = Player(i, self.player_types[i], 0, random.uniform(5000000, 20000000))
                 self.players.append(new_player)
 
-            elif hasattr(self.players[i], 'Power Forward'):
-                if hasattr(self.players[i], 'Small Forward'):
-                    if hasattr(self.players[i], 'Point Guard'):
-                        if hasattr(self.players[i], 'Shooting Guard'):
-                            new_player = Player(i, random.choice(self.player_types), 0, random.uniform(5000000, 20000000))
-                            self.players.append(new_player)
-                        else:
-                            new_player = Player(i, 'Shooting Guard', 0, random.uniform(5000000, 20000000))
-                            self.players.append(new_player)
-                    else:
-                        new_player = Player(i, 'Point Guard', 0, random.uniform(5000000, 20000000))
-                        self.players.append(new_player)
-                else:
-                    new_player = Player(i, 'Small Forward', 0, random.uniform(5000000, 20000000))
-                    self.players.append(new_player)
-            else:
-                new_player = Player(i, 'Power Forward', 0, random.uniform(5000000, 20000000))
-                self.players.append(new_player)
+
+
+            # elif hasattr(self.players[i], 'Power Forward'):
+            #     if hasattr(self.players[i], 'Small Forward'):
+            #         if hasattr(self.players[i], 'Point Guard'):
+            #             if hasattr(self.players[i], 'Shooting Guard'):
+            #                 new_player = Player(i, random.choice(self.player_types), 0, random.uniform(5000000, 20000000))
+            #                 self.players.append(new_player)
+            #             else:
+            #                 new_player = Player(i, 'Shooting Guard', 0, random.uniform(5000000, 20000000))
+            #                 self.players.append(new_player)
+            #         else:
+            #             new_player = Player(i, 'Point Guard', 0, random.uniform(5000000, 20000000))
+            #             self.players.append(new_player)
+            #     else:
+            #         new_player = Player(i, 'Small Forward', 0, random.uniform(5000000, 20000000))
+            #         self.players.append(new_player)
+            # else:
+            #     new_player = Player(i, 'Power Forward', 0, random.uniform(5000000, 20000000))
+            #     self.players.append(new_player)

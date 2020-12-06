@@ -29,8 +29,8 @@ class Play_game:
     
 
     def find_winer(self):
-        while(team1_score < 7 or team2_score < 7):
-            if team1_turn:
+        while(self.team1_score < 7 or self.team2_score < 7):
+            if self.team1_turn:
                 PassOrShoot = input('Team1 type, "Pass" or "Shoot": ')
 
                 #Check for Player Input
@@ -47,14 +47,17 @@ class Play_game:
                     else:
                         if self.team1_pass.make_the_move():
                             self.team1.dis_form_hoop -= 1
+                            print(f"OO {self.team1_name} is now {self.team1.dis_form_hoop} spaces form the hoop but may be able to make a shot at 3 spaces away.")
+                        else:
+                            print(f"O Well better luck next time! Your still {self.team1.dis_form_hoop} spaces away but you maybe able to make a shot 3 spaces away.")
                 else:
-                    if self.team1.dis_form_hoop < 3 and team2.pretend_shot() and self.team1_shot():
-                        team1_score +=1
+                    if self.team1.dis_form_hoop < 3 and self.team2_shot.pretend_shot() and self.team1_shot.make_the_move():
+                        self.team1_score +=1
                         print(f"{self.team1_name} socer up by 1")
                     else:
                         print(f"OOO almost but not quite {self.team1_name} ")
                         
-                team1_turn = False
+                self.team1_turn = False
             else:
                 PassOrShoot = input('Team2 type, "Pass" or "Shoot": ')
 
@@ -72,18 +75,21 @@ class Play_game:
                     else:
                         if self.team2_pass.make_the_move():
                             self.team2.dis_form_hoop -= 1
+                            print(f"OO {self.team2_name} is now {self.team2.dis_form_hoop} spaces form the hoop but may be able to make a shot at 3 spaces away.")
+                        else:
+                            print(f"O Well better luck next time! Your still {self.team1.dis_form_hoop} spaces away but you maybe able to make a shot 3 spaces away.")
                 else:
-                    if self.team2.dis_form_hoop < 3 and team1.pretend_shot() and self.team2_shot():
-                        team2_score +=1
+                    if self.team2.dis_form_hoop < 3 and self.team1_shot.pretend_shot() and self.team2_shot.make_the_move():
+                        self.team2_score +=1
                         print(f"{self.team2_name} socer up by 1")
                     else:
                         print(f"OOO almost but not quite {self.team2_name} ")
                         
-                team2_turn = False
+                self.team1_turn = True
 
-            if team1_score >= 7:
-                print(f"{self.team1_name} Wins!")
-            else:
-                print(f"{self.team2_name} Wins!")
+        if self.team1_score >= 7:
+            print(f"{self.team1_name} Wins!")
+        else:
+            print(f"{self.team2_name} Wins!")
 
    

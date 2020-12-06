@@ -15,8 +15,10 @@ class Make_move:
 
     # 1st METHOD MODIFIES CLASS ATTRIBUTE win
     def win_or_not(self):
-        if random.uniform(1, 11) % 2 != 0:
+        if int(random.uniform(1, 11)) % 2 != 0:
             self.win = False
+        else:
+            self.win = True
 
         return self.win
 
@@ -24,5 +26,7 @@ class Make_move:
     def injured_or_not(self):
         if random.choice([2,2,2,2,2,1,2,2,2,1]) % 2 != 0:
             self.not_injured = False
+        else:
+            self.not_injured = True
 
         return self.not_injured
