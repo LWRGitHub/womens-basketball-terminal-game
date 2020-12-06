@@ -4,6 +4,7 @@ import random
 # 6 OF 6 CLASSES Make_move is the class the will get 
 # INHERITED by Pass & Shoot inorder to make the move
 class Make_move:
+    # 2 class attribute
     win = True
     not_injured = True
 

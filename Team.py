@@ -6,9 +6,10 @@ from Player import Player
 
 # 2 OF 6 CLASSES Team builds a women's basketball team
 class Team:
-    # 1 class attribute
+    # 3 class attribute
     player_types = ["Center", 'Power Forward', 'Small Forward', 'Point Guard', 'Shooting Guard']
     player_count = 12
+    dis_form_hoop = 5
 
     # 4 INIT ATTRIBUTES 
     def __init__(self, team_name, location):

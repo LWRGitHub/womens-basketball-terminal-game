@@ -11,7 +11,7 @@ string.ascii_letters
 class Player:
     # 1 class attribute
     player_name = ""
-    for i in range(random.uniform(3, 8)):
+    for i in range(int(random.uniform(3, 8))):
         player_name += random.choice(string.ascii_letters)
 
     # 4 INIT ATTRIBUTES 
